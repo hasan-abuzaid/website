@@ -11,93 +11,106 @@ const initiatives = [
 ];
 
 export default function Leadership() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 24 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
+  };
+
   return (
     <>
       <AuroraBackground />
-      <div className="min-h-[calc(100dvh-5rem)] w-full px-6 py-12 md:py-20 md:px-12 lg:px-24 max-w-7xl mx-auto">
+      <div className="w-full px-6 md:px-20 max-w-[1200px] mx-auto pt-32 pb-24">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-20 max-w-3xl"
+          variants={containerVariants}
+          initial="hidden"
+          animate="show"
+          className="relative"
         >
-          <div className="flex flex-col mb-12">
-            <span className="eyebrow-text text-[#9DC2D9]/40 mb-6 font-mono tracking-widest">03</span>
-            <h1 className="text-5xl md:text-7xl font-display font-medium text-white mb-6 tracking-tight leading-[1.1]">
-              Leading the people behind the work.
+          <div className="absolute top-0 left-0 -mt-16 -ml-4 font-mono text-[#F59E0B] text-[120px] leading-none opacity-15 select-none pointer-events-none">
+            03
+          </div>
+          
+          <motion.div variants={itemVariants} className="mb-24 relative z-10">
+            <h3 className="font-mono text-[#F59E0B] text-[11px] uppercase tracking-[0.2em] mb-6">
+              LEADERSHIP · COMMUNITY
+            </h3>
+            <h1 className="font-display text-white text-[64px] uppercase tracking-wide leading-[0.9] mb-6">
+              LEADING THE PEOPLE BEHIND THE WORK.
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed">
-              President of GJU's Innovation Club and Chairman of its AAAI chapter — building bridges between students, industry, and AI.
+            <p className="font-body text-[#A1A1AA] text-[18px] max-w-[600px]">
+              President of GJU's Innovation Club and Chairman of its AAAI chapter.
             </p>
-          </div>
-        </motion.div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 mb-24">
-          <div className="lg:col-span-5 flex flex-col gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="portfolio-card p-8 rounded-2xl relative overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 p-8 opacity-10">
-                <span className="text-8xl font-display font-bold">1.5k</span>
+          </motion.div>
+          
+          <div className="border-t border-[#27272A] pt-16 mb-16">
+            <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+              <div className="amber-glow-hover border border-[#27272A] border-l-[2px] border-l-[#F59E0B] bg-[#111113] p-8 rounded-[2px] flex flex-col h-full">
+                <h2 className="font-display text-[#F59E0B] text-[32px] tracking-wide mb-2 uppercase">
+                  PRESIDENT
+                </h2>
+                <h3 className="font-body text-white text-[16px] font-semibold mb-4">
+                  GJU Innovation Club
+                </h3>
+                <p className="font-body text-[#A1A1AA] text-[14px]">
+                  GJU's largest club — 1,500+ members, 20-person board.
+                </p>
               </div>
-              <h3 className="text-xl text-primary font-mono tracking-widest uppercase mb-4 text-sm">President</h3>
-              <h2 className="text-3xl text-white font-display font-medium mb-4">GJU Innovation Club</h2>
-              <p className="text-muted-foreground font-light text-lg">
-                GJU's largest club — 1,500+ members, 20-person board.
-              </p>
+
+              <div className="amber-glow-hover border border-[#27272A] border-l-[2px] border-l-[#F59E0B] bg-[#111113] p-8 rounded-[2px] flex flex-col h-full">
+                <h2 className="font-display text-[#F59E0B] text-[32px] tracking-wide mb-2 uppercase">
+                  CHAIRMAN
+                </h2>
+                <h3 className="font-body text-white text-[16px] font-semibold mb-4">
+                  AAAI GJU Chapter
+                </h3>
+                <p className="font-body text-[#A1A1AA] text-[14px]">
+                  The student chapter for AI, in Jordan.
+                </p>
+              </div>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="portfolio-card p-8 rounded-2xl"
-            >
-              <h3 className="text-xl text-primary font-mono tracking-widest uppercase mb-4 text-sm">Chairman</h3>
-              <h2 className="text-3xl text-white font-display font-medium mb-4">AAAI GJU Chapter</h2>
-              <p className="text-muted-foreground font-light text-lg">
-                The student chapter for AI, in Jordan.
-              </p>
-            </motion.div>
-          </div>
-
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="lg:col-span-7 flex flex-col justify-center"
-          >
-            <h2 className="text-sm font-mono tracking-widest text-primary uppercase mb-8">Initiatives & Events</h2>
-            <div className="flex flex-wrap gap-3 mb-12">
-              {initiatives.map((item, idx) => (
-                <span 
-                  key={idx} 
-                  className="px-4 py-2 border border-white/10 rounded-full text-sm text-gray-300 bg-white/[0.02] hover:bg-white/[0.05] hover:border-primary/50 transition-colors cursor-default"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-
-            <div className="border-t border-white/10 pt-12">
-              <div className="flex items-baseline gap-4 mb-8">
-                <span className="text-6xl text-white font-display font-medium">15+</span>
-                <span className="text-xl text-muted-foreground font-light">Events initiated & organized</span>
+            <motion.div variants={itemVariants} className="mb-24">
+              <h2 className="font-mono text-[#52525B] text-[11px] uppercase tracking-[0.15em] mb-6">
+                INITIATIVES & EVENTS
+              </h2>
+              <div className="flex flex-wrap gap-3">
+                {initiatives.map((item, idx) => (
+                  <span 
+                    key={idx} 
+                    className="font-mono text-[#A1A1AA] text-[12px] px-[14px] py-[6px] border border-[#27272A] rounded-[2px] bg-[#111113]"
+                  >
+                    {item}
+                  </span>
+                ))}
               </div>
-              
+            </motion.div>
+
+            <motion.div variants={itemVariants}>
+              <h2 className="font-mono text-[#52525B] text-[11px] uppercase tracking-[0.15em] mb-6">
+                EVENT GALLERY
+              </h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {[1, 2, 3, 4, 5, 6].map((idx) => (
-                  <div key={idx} className="aspect-[4/3] bg-white/[0.02] border border-white/5 rounded-lg flex items-center justify-center">
-                    <span className="text-xs font-mono text-white/20">[[PHOTO_EVENT_{idx}]]</span>
+                  <div key={idx} className="aspect-[4/3] bg-[#111113] border border-[#27272A] rounded-[2px] flex items-center justify-center relative group overflow-hidden">
+                    <span className="font-mono text-[#52525B] text-[11px] group-hover:text-[#A1A1AA] transition-colors">
+                      PHOTO [[PHOTO_EVENT_{idx}]]
+                    </span>
                   </div>
                 ))}
               </div>
-            </div>
-          </motion.div>
-        </div>
+            </motion.div>
+          </div>
+        </motion.div>
       </div>
     </>
   );

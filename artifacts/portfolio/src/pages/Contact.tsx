@@ -3,70 +3,83 @@ import { Mail, Linkedin, Github, MapPin } from 'lucide-react';
 import { AuroraBackground } from '@/components/AuroraBackground';
 
 export default function Contact() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 24 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
+  };
+
   return (
     <>
       <AuroraBackground />
-      <div className="min-h-[calc(100dvh-5rem)] w-full flex flex-col px-6 py-12 md:py-20 md:px-12 lg:px-24 max-w-7xl mx-auto">
-        <div className="flex-1 flex flex-col justify-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="mb-16 max-w-3xl"
-          >
-            <h1 className="text-5xl md:text-7xl font-display font-medium text-white mb-8 tracking-tight">
-              Let's build something.
+      <div className="w-full flex flex-col px-6 md:px-20 max-w-[1200px] mx-auto pt-32 min-h-[100dvh]">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="show"
+          className="flex-1 flex flex-col"
+        >
+          <motion.div variants={itemVariants} className="mb-24">
+            <h3 className="font-mono text-[#F59E0B] text-[11px] uppercase tracking-[0.2em] mb-6">
+              CONTACT · GET IN TOUCH
+            </h3>
+            <h1 className="font-display text-white text-[80px] uppercase tracking-wide leading-[0.9] mb-6">
+              LET'S BUILD SOMETHING.
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed">
+            <p className="font-body text-[#A1A1AA] text-[18px] max-w-[600px]">
               Open to engineering roles, collaborations, and videography work. The fastest way to reach me is email.
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            <a href="mailto:[[EMAIL]]" className="portfolio-card p-8 rounded-2xl flex flex-col group">
-              <Mail className="w-6 h-6 text-primary mb-6 group-hover:scale-110 transition-transform" />
-              <h3 className="text-sm font-mono tracking-widest text-muted-foreground uppercase mb-2">Email</h3>
-              <p className="text-white text-lg font-medium break-all">[[EMAIL]]</p>
+          <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <a href="mailto:[[EMAIL]]" className="amber-glow-hover border border-[#27272A] bg-[#111113] p-8 rounded-[2px] flex flex-col group">
+              <Mail className="w-6 h-6 text-[#F59E0B] mb-8 group-hover:scale-110 transition-transform" />
+              <h3 className="font-mono text-[#52525B] text-[11px] uppercase tracking-[0.15em] mb-2">EMAIL</h3>
+              <p className="font-body text-white text-[18px] truncate">[[EMAIL]]</p>
             </a>
 
-            <a href="[[LINKEDIN]]" target="_blank" rel="noopener noreferrer" className="portfolio-card p-8 rounded-2xl flex flex-col group">
-              <Linkedin className="w-6 h-6 text-[#0A66C2] mb-6 group-hover:scale-110 transition-transform" />
-              <h3 className="text-sm font-mono tracking-widest text-muted-foreground uppercase mb-2">LinkedIn</h3>
-              <p className="text-white text-lg font-medium break-all">Hasan Abuzaid</p>
+            <a href="[[LINKEDIN]]" target="_blank" rel="noopener noreferrer" className="amber-glow-hover border border-[#27272A] bg-[#111113] p-8 rounded-[2px] flex flex-col group">
+              <Linkedin className="w-6 h-6 text-[#F59E0B] mb-8 group-hover:scale-110 transition-transform" />
+              <h3 className="font-mono text-[#52525B] text-[11px] uppercase tracking-[0.15em] mb-2">LINKEDIN</h3>
+              <p className="font-body text-white text-[18px] truncate">[[LINKEDIN]]</p>
             </a>
 
-            <a href="[[GITHUB]]" target="_blank" rel="noopener noreferrer" className="portfolio-card p-8 rounded-2xl flex flex-col group">
-              <Github className="w-6 h-6 text-white mb-6 group-hover:scale-110 transition-transform" />
-              <h3 className="text-sm font-mono tracking-widest text-muted-foreground uppercase mb-2">GitHub</h3>
-              <p className="text-white text-lg font-medium break-all">[[GITHUB]]</p>
+            <a href="[[GITHUB]]" target="_blank" rel="noopener noreferrer" className="amber-glow-hover border border-[#27272A] bg-[#111113] p-8 rounded-[2px] flex flex-col group">
+              <Github className="w-6 h-6 text-[#F59E0B] mb-8 group-hover:scale-110 transition-transform" />
+              <h3 className="font-mono text-[#52525B] text-[11px] uppercase tracking-[0.15em] mb-2">GITHUB</h3>
+              <p className="font-body text-white text-[18px] truncate">[[GITHUB]]</p>
             </a>
 
-            <div className="portfolio-card p-8 rounded-2xl flex flex-col">
-              <MapPin className="w-6 h-6 text-primary mb-6" />
-              <h3 className="text-sm font-mono tracking-widest text-muted-foreground uppercase mb-2">Location</h3>
-              <p className="text-white text-lg font-medium">Amman, Jordan</p>
+            <div className="amber-glow-hover border border-[#27272A] bg-[#111113] p-8 rounded-[2px] flex flex-col group">
+              <MapPin className="w-6 h-6 text-[#F59E0B] mb-8 group-hover:scale-110 transition-transform" />
+              <h3 className="font-mono text-[#52525B] text-[11px] uppercase tracking-[0.15em] mb-2">LOCATION</h3>
+              <p className="font-body text-white text-[18px] truncate">Amman, Jordan</p>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
 
         <motion.footer
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-24 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground"
+          className="mt-24 pt-8 pb-12 border-t border-[#27272A] flex flex-col md:flex-row items-center justify-between gap-4"
         >
-          <div className="flex items-center gap-2">
-            <span className="font-display text-white text-lg font-medium">Hasan<span className="text-primary">.</span></span>
+          <div className="font-display text-[#F59E0B] text-[20px] tracking-wide">
+            HASAN.
           </div>
-          <div className="text-center md:text-left">
-            Mechatronics engineer · videographer · Amman, Jordan
+          <div className="font-mono text-[#A1A1AA] text-[12px] text-center">
+            Mechatronics engineer <span className="text-[#52525B]">·</span> videographer <span className="text-[#52525B]">·</span> Amman, Jordan
           </div>
-          <div>
+          <div className="font-mono text-[#52525B] text-[12px]">
             © 2026
           </div>
         </motion.footer>
