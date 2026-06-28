@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { AuroraBackground } from '@/components/AuroraBackground';
+import { SectionLabel } from '@/components/SectionLabel';
 
 const projects = [
   {
@@ -111,9 +112,7 @@ export default function Engineering() {
           
           <div className="border-t border-[#27272A] pt-16 mb-16">
             <motion.div variants={itemVariants} className="mb-12">
-              <h2 className="font-mono text-[#52525B] text-[11px] uppercase tracking-[0.15em] mb-6">
-                EDUCATION
-              </h2>
+              <SectionLabel className="mb-6">EDUCATION</SectionLabel>
               <div className="border-l-[2px] border-[#F59E0B] pl-6 py-1">
                 <h3 className="font-body text-white text-[18px] mb-1">
                   B.Sc. Mechatronics Engineering — German Jordanian University (GJU)
@@ -125,9 +124,7 @@ export default function Engineering() {
             </motion.div>
 
             <motion.div variants={itemVariants} className="mb-24">
-              <h2 className="font-mono text-[#52525B] text-[11px] uppercase tracking-[0.15em] mb-6">
-                WORK EXPERIENCE
-              </h2>
+              <SectionLabel className="mb-6">WORK EXPERIENCE</SectionLabel>
               <div className="flex flex-col gap-8">
                 <div className="border-l-[2px] border-[#F59E0B] pl-6 py-1 relative">
                   <div className="flex items-center gap-3 mb-1">
@@ -157,9 +154,7 @@ export default function Engineering() {
 
           <div className="border-t border-[#27272A] pt-16">
             <motion.div variants={itemVariants} className="mb-8">
-              <h2 className="font-mono text-[#52525B] text-[11px] uppercase tracking-[0.15em]">
-                SELECTED PROJECTS ({projects.length})
-              </h2>
+              <SectionLabel>SELECTED PROJECTS ({projects.length})</SectionLabel>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

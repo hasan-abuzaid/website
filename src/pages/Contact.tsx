@@ -66,23 +66,6 @@ export default function Contact() {
             </div>
           </motion.div>
         </motion.div>
-
-        <motion.footer
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-24 pt-8 pb-12 border-t border-[#27272A] flex flex-col md:flex-row items-center justify-between gap-4"
-        >
-          <div className="font-display text-[#F59E0B] text-[20px] tracking-wide">
-            HASAN.
-          </div>
-          <div className="font-mono text-[#A1A1AA] text-[12px] text-center">
-            Mechatronics engineer <span className="text-[#52525B]">·</span> videographer <span className="text-[#52525B]">·</span> Amman, Jordan
-          </div>
-          <div className="font-mono text-[#52525B] text-[12px]">
-            © 2026
-          </div>
-        </motion.footer>
       </div>
     </>
   );

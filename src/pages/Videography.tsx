@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Play } from 'lucide-react';
 import { AuroraBackground } from '@/components/AuroraBackground';
+import { SectionLabel } from '@/components/SectionLabel';
 
 const reels = [
   "Brand reel",
@@ -72,9 +73,7 @@ export default function Videography() {
             </motion.div>
 
             <motion.div variants={itemVariants} className="mb-24">
-              <h2 className="font-mono text-[#52525B] text-[11px] uppercase tracking-[0.15em] mb-6">
-                CLIENT WORK
-              </h2>
+              <SectionLabel className="mb-6">CLIENT WORK</SectionLabel>
               <div className="flex flex-col gap-6">
                 <div className="flex flex-col md:flex-row md:items-center justify-between border-b border-[#27272A] pb-6 group cursor-pointer">
                   <div className="flex flex-col gap-2">
@@ -103,9 +102,7 @@ export default function Videography() {
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <h2 className="font-mono text-[#52525B] text-[11px] uppercase tracking-[0.15em] mb-6">
-                REEL CATEGORIES
-              </h2>
+              <SectionLabel className="mb-6">REEL CATEGORIES</SectionLabel>
               <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
                 {reels.map((reel, idx) => (
                   <div 

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { AuroraBackground } from '@/components/AuroraBackground';
+import { SectionLabel } from '@/components/SectionLabel';
 
 const initiatives = [
   "Passionate Innovators",
@@ -80,9 +81,7 @@ export default function Leadership() {
             </motion.div>
 
             <motion.div variants={itemVariants} className="mb-24">
-              <h2 className="font-mono text-[#52525B] text-[11px] uppercase tracking-[0.15em] mb-6">
-                INITIATIVES & EVENTS
-              </h2>
+              <SectionLabel className="mb-6">INITIATIVES &amp; EVENTS</SectionLabel>
               <div className="flex flex-wrap gap-3">
                 {initiatives.map((item, idx) => (
                   <span 
@@ -96,9 +95,7 @@ export default function Leadership() {
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <h2 className="font-mono text-[#52525B] text-[11px] uppercase tracking-[0.15em] mb-6">
-                EVENT GALLERY
-              </h2>
+              <SectionLabel className="mb-6">EVENT GALLERY</SectionLabel>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {[1, 2, 3, 4, 5, 6].map((idx) => (
                   <div key={idx} className="aspect-[4/3] bg-[#111113] border border-[#27272A] rounded-[2px] flex items-center justify-center relative group overflow-hidden">
